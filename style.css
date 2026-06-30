@@ -19,6 +19,7 @@ Domain Path: /languages
   --wp--preset--color--light-green: #7bc242;
   --wp--preset--color--brand-red: #d52828;
   --wp--preset--color--white: #ffffff;
+  --wp--preset--color--light-gray: #f5f5f5;
 }
 
 * {
@@ -53,6 +54,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #295b2d;
 }
 
+h1 { font-size: 3em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
 p {
   margin-bottom: 1em;
 }
@@ -60,18 +65,33 @@ p {
 .wp-block-button__link {
   background-color: var(--wp--preset--color--brand-red);
   color: white;
-  padding: 12px 24px;
+  padding: 14px 32px;
   border-radius: 8px;
   display: inline-block;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
 }
 
 .wp-block-button__link:hover {
   background-color: #b82121;
   text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(213, 40, 40, 0.3);
+}
+
+.wp-block-button__link.is-style-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.wp-block-button__link.is-style-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--wp--preset--color--light-green);
+  color: var(--wp--preset--color--light-green);
 }
 
 .wp-block-cover {
@@ -81,49 +101,330 @@ p {
 
 .site-header {
   background-color: white;
-  padding: 20px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .site-logo {
+  max-width: 80px;
+  height: auto;
+}
+
+.site-header .site-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #295b2d;
+  margin: 0;
+}
+
+.wp-block-navigation {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.wp-block-navigation a {
+  color: #295b2d;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.wp-block-navigation a:hover {
+  color: var(--wp--preset--color--brand-red);
+  text-decoration: none;
 }
 
 .site-footer {
   background-color: #295b2d;
   color: white;
-  padding: 40px 20px;
+  padding: 60px 40px 30px;
   text-align: center;
 }
 
 .site-footer a {
   color: #7bc242;
+  transition: color 0.3s ease;
 }
 
 .site-footer a:hover {
   color: #fff;
+  text-decoration: none;
 }
 
 .wp-block-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  margin: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.wp-block-gallery figure {
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wp-block-gallery figure:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.wp-block-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
 .wp-block-buttons {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section-hero {
+  background: linear-gradient(135deg, #295b2d 0%, #1a3620 100%);
+  color: white;
+  padding: 100px 40px;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-hero h1 {
+  color: white;
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.section-hero p {
+  color: #7bc242;
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.section-about {
+  background-color: #f5f5f5;
+  padding: 80px 40px;
+}
+
+.section-about h2,
+.section-services h2,
+.section-franchise h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #295b2d;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  border-top: 4px solid var(--wp--preset--color--brand-red);
+}
+
+.feature-card h3 {
+  color: var(--wp--preset--color--brand-red);
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.feature-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.section-services {
+  padding: 80px 40px;
+}
+
+.section-franchise {
+  background-color: #f5f5f5;
+  padding: 80px 40px;
+}
+
+.form-section {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wpcf7-form-control-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea,
+.wpcf7-form select {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form textarea:focus,
+.wpcf7-form select:focus {
+  outline: none;
+  border-color: var(--wp--preset--color--brand-red);
+  box-shadow: 0 0 0 3px rgba(213, 40, 40, 0.1);
+}
+
+.wpcf7-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.wpcf7-submit {
+  background-color: var(--wp--preset--color--brand-red);
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wpcf7-submit:hover {
+  background-color: #b82121;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(213, 40, 40, 0.3);
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.contact-item h3 {
+  color: var(--wp--preset--color--brand-red);
+  margin-bottom: 10px;
+}
+
+.contact-item p {
+  color: #666;
+}
+
+.contact-item a {
+  font-weight: 600;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--wp--preset--color--brand-red);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.3em;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #7bc242;
+  transform: scale(1.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 @media (max-width: 768px) {
-  .wp-block-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  .site-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
   }
 
-  .site-header {
-    flex-direction: column;
-    gap: 10px;
+  .section-hero {
+    padding: 60px 20px;
+    min-height: auto;
+  }
+
+  .section-hero h1 {
+    font-size: 2.2em;
+  }
+
+  .section-about,
+  .section-services,
+  .section-franchise {
+    padding: 50px 20px;
+  }
+
+  .wp-block-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
   }
 
   .wp-block-buttons {
@@ -133,5 +434,14 @@ p {
   .wp-block-button__link {
     width: 100%;
     text-align: center;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+
+  .features-grid,
+  .contact-info {
+    grid-template-columns: 1fr;
   }
 }
