@@ -25,8 +25,7 @@ add_action( 'after_setup_theme', 'shatur_setup' );
 
 // Enqueue front-end styles
 function shatur_enqueue_assets() {
-    $css_dir = get_stylesheet_directory_uri() . '/assets/css';
-    wp_enqueue_style( 'shatur-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0.0' );
+    wp_enqueue_style( 'shatur-style', get_stylesheet_uri(), array(), '1.0.0' );
 }
 add_action( 'wp_enqueue_scripts', 'shatur_enqueue_assets' );
 
@@ -35,8 +34,3 @@ function shatur_editor_styles() {
     add_editor_style( 'assets/css/editor.css' );
 }
 add_action( 'admin_init', 'shatur_editor_styles' );
-
-// Recommended plugins notice (informational only)
-function shatur_admin_notice_recommended_plugins() {
-    // This is intentionally minimal. You may add TGMPA or instructions in README.
-}
