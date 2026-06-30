@@ -1,5 +1,25 @@
-# Shatur — Repository
+# Shatur Theme
 
-This repository will contain the WordPress theme "Shatur Theme" (Full Site Editing). This initial README was created by the assistant as the first commit so branches can be created.
+Полноценная FSE-тема WordPress для фермы Шатурская клубника.
 
-Next steps performed by the assistant branch: feature/wp-theme — theme files will be added there.
+## Особенности
+
+- ✅ Full Site Editing (FSE)
+- ✅ Hero с фоном
+- ✅ Contact Form 7 интеграция
+- ✅ Отзывчивый дизайн
+- ✅ Цветовая палитра
+
+## Ос и требования
+
+- WordPress 6.0+
+- PHP 7.4+
+
+## Установка
+
+1. Нагружаюте всю папку в `wp-content/themes/shatur-theme/`
+2. Активируюте тему в WordPress Admin
+
+## Поддержка
+
+Email: raynewme@yandex.ru
