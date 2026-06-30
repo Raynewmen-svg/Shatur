@@ -22,7 +22,7 @@
 ## Customization
 
 - Hero image: Replace `assets/hero-poster.svg` with your own image
-- Gallery images: Add images to `assets/gallery-*.svg` (8 images total)
+- Gallery images: Add images to `assets/` folder
 - Logo: Replace `assets/favicon.svg` with your logo
 - Colors: Edit `theme.json` to change color palette
 - Text: Use WordPress Editor (Site Editor) to modify content
@@ -32,7 +32,6 @@
 - Contact Form 7
 - Yoast SEO
 - WP Fastest Cache
-- Elementor (optional)
 
 ## Support
 

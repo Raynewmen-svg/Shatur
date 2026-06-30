@@ -1,10 +1,13 @@
 /*
 Theme Name: Shatur Theme
-Theme URI: https://example.com/shatur
+Theme URI: https://github.com/Raynewmen-svg/Shatur
 Author: Raynewmen-svg
 Author URI: https://github.com/Raynewmen-svg
-Description: Full Site Editing WordPress theme for Shatur — hero, gallery, franchise page, Contact Form 7 integration.
+Description: Full Site Editing WordPress theme for Shatur farm — hero, gallery, franchise page, Contact Form 7 integration.
 Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: shatur-theme
@@ -18,10 +21,21 @@ Domain Path: /languages
   --wp--preset--color--white: #ffffff;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   line-height: 1.6;
   color: #295b2d;
+  background-color: #ffffff;
 }
 
 a {
@@ -33,6 +47,16 @@ a:hover {
   text-decoration: underline;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: #295b2d;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
 .wp-block-button__link {
   background-color: var(--wp--preset--color--brand-red);
   color: white;
@@ -40,6 +64,9 @@ a:hover {
   border-radius: 8px;
   display: inline-block;
   font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .wp-block-button__link:hover {
@@ -87,7 +114,12 @@ a:hover {
   margin: 0;
 }
 
-/* Responsive */
+.wp-block-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
   .wp-block-gallery {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -96,5 +128,14 @@ a:hover {
   .site-header {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .wp-block-buttons {
+    flex-direction: column;
+  }
+
+  .wp-block-button__link {
+    width: 100%;
+    text-align: center;
   }
 }

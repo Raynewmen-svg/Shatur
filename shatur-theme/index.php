@@ -1,7 +1,4 @@
 <?php
-// Silence is golden.
-// index.php fallback for the theme.
-
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
