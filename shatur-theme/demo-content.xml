@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+  <title>Shatur Demo Content</title>
+  <link>https://example.com</link>
+  <description>Demo export for Shatur Theme</description>
+  <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+  <language>ru-RU</language>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:author>
+    <wp:author_id>1</wp:author_id>
+    <wp:author_login>admin</wp:author_login>
+    <wp:author_email>admin@domain</wp:author_email>
+  </wp:author>
+
+  <item>
+    <title>Добро пожаловать на ферму</title>
+    <link>https://example.com/welcome</link>
+    <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+    <dc:creator>admin</dc:creator>
+    <guid isPermaLink="false">https://example.com/?p=1</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Текст приветствия и информация про самосбор.</p>]]></content:encoded>
+    <wp:post_type>post</wp:post_type>
+    <wp:status>publish</wp:status>
+  </item>
+
+</channel>
+</rss>
